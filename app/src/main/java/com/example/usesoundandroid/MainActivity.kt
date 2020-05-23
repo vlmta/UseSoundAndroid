@@ -33,8 +33,17 @@ class MainActivity : AppCompatActivity() {
         sound = soundPool?.load(this, R.raw.loading_sound, 1)
 
         play_button.setOnClickListener{
-            soundPool?.play( 1,0.1F, 0.1F, 1, 0, 1F)
+            soundPool?.play( 1,0.1F, 0.1F, 1, -1, 1F)
             //-1: forever loop
+        }
+        resume_button.setOnClickListener{
+            soundPool?.resume(1)
+        }
+        pause_button.setOnClickListener{
+            soundPool?.pause(1)
+        }
+        release_button.setOnClickListener{
+            soundPool?.release()
         }
 
     }
